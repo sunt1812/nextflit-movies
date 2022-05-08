@@ -1,0 +1,15 @@
+@use '../../scss/' as *;
+.gototop {
+    position: fixed;
+    bottom: 10%;
+    right: 4%;
+    z-index: 99999;
+    i {
+        font-size: 3rem;
+        opacity: 0.7;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

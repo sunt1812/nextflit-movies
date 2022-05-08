@@ -1,0 +1,40 @@
+@use  '../../scss/' as *;
+.menu {
+    position: fixed;
+    left: 0;
+    top: 25%;
+    background-color: rgba(0,0,0,.6);
+    width: 45px;
+    transition: all .3s linear;
+    overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+    @include tablet {
+        width: 36px;
+    }
+    @include mobile {
+        width: 26px;
+    }
+    &:hover{
+        width: 15rem;
+        i {
+            opacity: 1;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        padding: 0.2rem;
+        i {
+            font-size: 2.4rem;
+            opacity: .8;
+        }
+    }
+    .title {
+        text-transform: capitalize;
+        width: max-content;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,73 @@
+@use '../../scss/' as *;
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: 99;
+    transition: all .3s ease;
+    &.srink {
+        height: $header-shrink-height;
+        background-color:rgba($color: #000000, $alpha: .6);
+    }
+    &__navbar {
+        @include flex(center,space-between);
+        height: 100%;
+        padding: 0rem 2rem;
+        @include mobile {
+            @include flex("",center)
+        }
+        &__logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: capitalize;
+            img {
+                margin-right: 1rem;
+                width: 60px;
+                @include mobile {
+                    width: 40px;
+                }
+            }
+        }
+        &__menu {
+            @include flex(center,"");
+            & > * ~ * {
+                margin-left: 2rem;
+            }
+            &__item {
+                position: relative;
+                text-transform: capitalize;
+                font-size: 1.4rem;
+                font-weight: 700;
+                padding: 0.5rem 0;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    height: 2px;
+                    background-color: $main-color;
+                    width: 0%;
+                    transform: translateX(-50%);
+                    transition: all .3s linear;
+                }
+                &.active::after,
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+            @include mobile {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $body-bg;
+                height: 5rem;
+                @include flex(center,space-between);
+                padding: 0rem 2rem;
+            }
+        }
+    }
+}

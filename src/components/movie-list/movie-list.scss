@@ -1,0 +1,50 @@
+@use '../../scss/' as *;
+.movie-list {
+    .swiper-slide {
+        width: 18%;
+        @include tablet {
+            width: 30%;
+        }
+
+        @include mobile {
+            width: 40%;
+        }
+    }
+    &.movie-style {
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 3rem;
+            height: 5rem;
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 1.5rem;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        background-color: rgba(0, 0, 0, .6);
+        width: 2rem;
+        height: 3rem;
+        color: $white;
+    }
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        background-color: rgba(0, 0, 0, .8);
+        color: $white;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 1.2rem;
+        opacity: 0.6;
+        font-weight: 700;
+    }
+    .swiper-button-prev:hover::after,
+    .swiper-button-next:hover::after {
+        opacity: 1;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 40%;
+    }
+}
